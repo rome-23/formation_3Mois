@@ -62,3 +62,13 @@ print(compteur(Phrase))
 
 """
 
+"""
+
+def divis(a, b):
+    try:
+        return a / b
+    except ZeroDivisionError:
+        return "Zero diviser par zero Impossible"
+print(divis(10, 0))
+print(divis(10, 2))
+"""
