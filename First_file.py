@@ -72,3 +72,41 @@ def divis(a, b):
 print(divis(10, 0))
 print(divis(10, 2))
 """
+
+"""
+nombre = [1,2,3,4,5,6,7,8,9,10]
+carre = [n ** 2 for n in nombre if n % 2 == 0]
+print("Carrer de n = ", carre)
+"""
+
+class compte_Bancaire:
+    def __init__(self, solde_initial):
+        self.solde = solde_initial
+        self.historique = []
+        pass
+    def deposit(self, montant):
+        self.solde += montant
+        self.historique.append(f"Depot de {montant}")
+        pass
+    def retraire(self, montant):
+        if montant > self.solde:
+            print("Montant insuffisant")
+        else:
+            self.solde -= montant
+        self.historique.append(f"Retraire de {montant}")
+        pass
+    def affiche(self):
+        print("sold :", self.solde)
+        pass
+    def Historie(self):
+        print("___HISTORIQUE DES OPERAATION___")
+        for ope in self.historique:
+            print("-", ope)
+
+
+compte = compte_Bancaire(0)
+compte.deposit(500)
+compte.retraire(30)
+compte.affiche()
+compte.retraire(46)
+compte.Historie()
