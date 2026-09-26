@@ -79,6 +79,7 @@ carre = [n ** 2 for n in nombre if n % 2 == 0]
 print("Carrer de n = ", carre)
 """
 
+"""
 class compte_Bancaire:
     def __init__(self, solde_initial):
         self.solde = solde_initial
@@ -110,3 +111,21 @@ compte.retraire(30)
 compte.affiche()
 compte.retraire(46)
 compte.Historie()
+
+"""
+"""
+def ajouter(element, liste= None):
+    if liste is None:
+        liste = []
+        liste.append(element)
+    return liste
+print(ajouter("a"))   # attendu : ['a']
+print(ajouter("b"))   # attendu : ['b'] ... mais on obtient ['a', 'b'] !
+
+"""
+"""
+def addition(a: int, b: int) -> int:
+    return a + b
+print(addition(4, 5))
+"""
+
