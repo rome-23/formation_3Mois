@@ -1,3 +1,5 @@
+import requests
+
 
 """
 age = 23
@@ -129,3 +131,7 @@ def addition(a: int, b: int) -> int:
 print(addition(4, 5))
 """
 
+reponses = requests.get("https://api.github.com/users/octocat")
+donnees = reponses.json
+print("Statut HTTP :", reponses.status_code)
+print("Dépôts publics :", donnees["public_repos"])
