@@ -132,6 +132,6 @@ print(addition(4, 5))
 """
 
 reponses = requests.get("https://api.github.com/users/octocat")
-donnees = reponses.json
+donnees = reponses.json()
 print("Statut HTTP :", reponses.status_code)
 print("Dépôts publics :", donnees["public_repos"])
