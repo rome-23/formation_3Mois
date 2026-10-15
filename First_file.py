@@ -1,5 +1,3 @@
-import requests
-
 
 """
 age = 23
@@ -131,7 +129,22 @@ def addition(a: int, b: int) -> int:
 print(addition(4, 5))
 """
 
+"""
+import requests
 reponses = requests.get("https://api.github.com/users/octocat")
 donnees = reponses.json()
 print("Statut HTTP :", reponses.status_code)
 print("Dépôts publics :", donnees["public_repos"])
+
+"""
+
+from pydantic import BaseModel
+
+class utilisateur(BaseModel):
+    nom: str
+    age: int
+    email: str
+
+user_1 = utilisateur(nom = "Romeo", age = "29", email = "loukour4@gmail.com")
+user_2 = utilisateur(nom = "Mobio", age = "25", email = "mobio@gmail.com")
+print(user_1)
