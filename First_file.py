@@ -138,6 +138,8 @@ print("Dépôts publics :", donnees["public_repos"])
 
 """
 
+
+"""
 from pydantic import BaseModel
 
 class utilisateur(BaseModel):
@@ -148,3 +150,14 @@ class utilisateur(BaseModel):
 user_1 = utilisateur(nom = "Romeo", age = "29", email = "loukour4@gmail.com")
 user_2 = utilisateur(nom = "Mobio", age = "25", email = "mobio@gmail.com")
 print(user_1)
+print(user_2)
+
+"""
+
+from fastapi import FastAPI
+
+app = FastAPI()
+
+@app.get("/salut")
+def salut():
+    return{"message: " "Bonjour !"}
