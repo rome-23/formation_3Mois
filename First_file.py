@@ -190,4 +190,3 @@ from dotenv import load_dotenv
 load_dotenv()
 cle = os.getenv("CLE_API")
 print("CLe charger: ", cle is not None)
-print(cle)
