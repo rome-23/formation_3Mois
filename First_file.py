@@ -154,6 +154,8 @@ print(user_2)
 
 """
 
+
+"""
 from fastapi import FastAPI
 
 app = FastAPI()
@@ -161,3 +163,19 @@ app = FastAPI()
 @app.get("/salut")
 def salut():
     return{"message: " "Bonjour !"}
+
+
+"""
+
+from pydantic import BaseModel
+from fastapi import FastAPI
+
+app = FastAPI()
+
+class Tache(BaseModel):
+    titre: str
+    priorite: int
+
+@app.post("/tache")
+def creer(tache: Tache):
+    return{"titre": tache.titre, "priorite": tache.priorite,"recue": True}
