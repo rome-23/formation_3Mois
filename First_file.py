@@ -167,6 +167,8 @@ def salut():
 
 """
 
+"""
+
 from pydantic import BaseModel
 from fastapi import FastAPI
 
@@ -179,3 +181,13 @@ class Tache(BaseModel):
 @app.post("/tache")
 def creer(tache: Tache):
     return{"titre": tache.titre, "priorite": tache.priorite,"recue": True}
+
+"""
+
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
+cle = os.getenv("CLE_API")
+print("CLe charger: ", cle is not None)
+print(cle)
